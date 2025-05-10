@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature vs Humidity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        canvas {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature vs Humidity</h1>
+    <canvas id="temperatureHumidityChart"></canvas>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Get the canvas element
+        var ctx = document.getElementById('temperatureHumidityChart').getContext('2d');
+
+        // Create a new Chart instance
+        var temperatureHumidityChart = new Chart(ctx, {
+            type: 'scatter', // Type of chart
+            data: {
+                datasets: [{
+                    label: 'Temperature vs Humidity',
+                    data: [
+                        { x: 20, y: 80 }, // x = temperature, y = humidity
+                        { x: 25, y: 70 },
+                        { x: 30, y: 60 },
+                        { x: 35, y: 50 },
+                        { x: 40, y: 40 },
+                        { x: 45, y: 30 },
+                        { x: 50, y: 20 }
+                    ],
+                    backgroundColor: 'rgba(75, 192, 192, 0.4)', // Data point color
+                    borderColor: 'rgba(75, 192, 192, 1)', // Data point border color
+                    showLine: true // Show a line connecting the points
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        type: 'linear', // X-axis type
+                        position: 'bottom',
+                        title: {
+                            display: true,
+                            text: 'Temperature (°C)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Humidity (%)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true, // Show the legend
+                        position: 'top' // Position of the legend
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `Temp: ${tooltipItem.raw.x}°C, Humidity: ${tooltipItem.raw.y}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
