@@ -414,7 +414,7 @@
 
 <!-- Cart Icon -->
 <!-- Cart Icon -->
-<div id="cart-icon" onclick="toggleCart()">🛒</div>
+<div id="cart-icon" onclick="toggleCart()">🛒(<span id="cart-count">0</span>)</div>
 
 <!-- Cart Popup -->
 <div id="cart-popup">
@@ -574,21 +574,30 @@ function submitForm() {
 
 
 
+//
 
 
-
-
-
-
-
-
-
+  function addToCart(itemName) {
+  //toggleCart();
 
 
 //
 
 
-  function addToCart(itemName) {
+if (cart[itemName]) {
+  cart[itemName].qty++;
+} else {
+  cart[itemName] = {
+    name: itemName,
+    qty: 1,
+    price: prices[itemName] || 0
+  };
+}
+document.getElementById('cart-count').textContent = Object.keys(cart).length;
+
+  
+  
+ //
     if (cart[itemName]) {
       cart[itemName].qty++;
     } else {
