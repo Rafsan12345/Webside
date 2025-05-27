@@ -454,7 +454,7 @@
 
 <script>
   const cart = {};
-
+const cart2 = {};
   const prices = {
   
   
@@ -585,15 +585,15 @@ function submitForm() {
 
 
 if (cart[itemName]) {
-  cart[itemName].qty++;
+  cart2[itemName].qty++;
 } else {
-  cart[itemName] = {
+  cart2[itemName] = {
     name: itemName,
     qty: 1,
     price: prices[itemName] || 0
   };
 }
-document.getElementById('cart-count').textContent = Object.keys(cart).length;
+document.getElementById('cart-count').textContent = Object.keys(cart2).length;
 
   
   
