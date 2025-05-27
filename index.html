@@ -579,23 +579,7 @@ function submitForm() {
 
   function addToCart(itemName) {
   //toggleCart();
-
-
-//
-
-
-if (cart[itemName]) {
-  cart2[itemName].qty++;
-} else {
-  cart2[itemName] = {
-    name: itemName,
-    qty: 1,
-    price: prices[itemName] || 0
-  };
-}
-document.getElementById('cart-count').textContent = Object.keys(cart2).length;
-
-  
+ 
   
  //
     if (cart[itemName]) {
@@ -607,8 +591,15 @@ document.getElementById('cart-count').textContent = Object.keys(cart2).length;
         price: prices[itemName] || 0
       };
     }
+	document.getElementById('cart-count').textContent = Object.keys(cart).length;
     updateCartDisplay();
   }
+
+
+
+
+
+
 
   function removeFromCart(itemName) {
     if (cart[itemName]) {
@@ -617,11 +608,34 @@ document.getElementById('cart-count').textContent = Object.keys(cart2).length;
         delete cart[itemName];
       }
     }
+	
+	document.getElementById('cart-count').textContent = Object.keys(cart).length;
+	
+	
+	
+	
+	//
+	
     updateCartDisplay();
   }
 
   function deleteItem(itemName) {
     delete cart[itemName];
+	
+	
+			if (cart[itemName]) {
+    cart[itemName].qty--;
+    if (cart[itemName].qty <= 0) {
+      delete cart2[itemName];
+    }
+  }
+	
+	document.getElementById('cart-count').textContent = Object.keys(cart).length;
+	
+	
+	
+	
+	
     updateCartDisplay();
   }
 
