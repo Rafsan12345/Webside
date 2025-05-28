@@ -10,12 +10,30 @@
       margin: 0;
       background: #f5f5f5;
     }
+	
+	
+	
+	
+	
+	
+	
+	
     header {
-      background-color: #333;
+	  background-image: url('CO.png');
+      background-color: gray;
       color: white;
-      padding: 20px;
+      padding: 40px;
       text-align: center;
+ 
     }
+	
+	
+	
+	
+	
+	
+	
+	
     section {
       padding: 30px 20px;
     }
@@ -99,6 +117,41 @@
       overflow-y: auto;
       margin-bottom: 10px;
     }
+	
+	
+	
+	
+	
+	#details-popup {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 30%;
+      width: 40%;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px #000;
+      padding: 20px;
+      z-index: 1000;
+    }
+    #details-popup button {
+      margin-top: 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+	
+	.Detailsbutton button{
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+	
   </style>
 </head>
 <body>
@@ -106,6 +159,29 @@
 <header>
   <h1>সদাইপাতি ডট কম</h1>
 </header>
+
+
+
+
+
+
+	  
+	   <!-- Details Popup -->
+  <div id="details-popup">
+    <h3>Product Details</h3>
+    <p id="details-content"></p>
+    <button onclick="closeDetails()">Close</button>
+  </div>
+	  
+	 
+
+
+
+
+
+
+
+
 
 <!-- Tech Section -->
 <section>
@@ -115,10 +191,13 @@
   
   
     <div class="product">
-      <img src="s.jpg" alt="Smart Watch">
+      <img src="image/Tech/1.jpg" alt="Smart Watch">
       <h3>Smart Watch</h3>
       <p>ID: T001 - Fitness tracking</p>
-	  <p id="T001 - tech"></p>
+	  <p id="T001 - tech"></p>	 
+	  <div class="Detailsbutton">
+	<button onclick="showDetails('T001 - tech')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('T001 - tech')">Add to Cart</button>
       </div>
@@ -131,6 +210,9 @@
       <img src="https://via.placeholder.com/300x150?text=Headphones" alt="Headphones">
       <h3>Headphones</h3>
       <p id="T002 - tech"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('T002 - tech')">Details</button>
+	 </div>  
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('T002 - tech')">Add to Cart</button>
       </div>
@@ -142,6 +224,9 @@
       <img src="https://via.placeholder.com/300x150?text=Headphones" alt="Headphoneseee">
       <h3>Headphones</h3>
       <p id="T003 - tech"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('T003 - tech')">Details</button>
+	 </div>  
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('T003 - tech')">Add to Cart</button>
       </div>
@@ -154,6 +239,9 @@
       <img src="https://via.placeholder.com/300x150?text=Headphones" alt="Headphoneseee">
       <h3>Headphones</h3>
    <p id="T004 - tech"></p>
+   	  <div class="Detailsbutton">
+	<button onclick="showDetails('T004 - tech')">Details</button>
+	 </div>	  
 
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('T004 - tech')">Add to Cart</button>
@@ -167,6 +255,9 @@
       <img src="https://via.placeholder.com/300x150?text=Headphones" alt="Headphoneseee">
       <h3>Headphones</h3>
             <p id="T005 - tech"></p>
+				  <div class="Detailsbutton">
+	<button onclick="showDetails('T005 - tech')">Details</button>
+	 </div>  
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('T005 - tech')">Add to Cart</button>
       </div>
@@ -183,9 +274,12 @@
   <h2>Food Products</h2>
   <div class="products">
     <div class="product">
-      <img src="m.jpg" alt="Chocolate">
+      <img src="image/Food/1.jpg" alt="Chocolate">
       <h3>Dark Chocolate</h3>
       <p id="F001 - F"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('F001 - F')">Details</button>
+	 </div>	  
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('F001 - F')">Add to Cart</button>
       </div>
@@ -203,6 +297,9 @@
       <h3>Honey</h3>
       <p>ID: F002 - Pure Organic</p>
 	  <p id="F002 - F"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('F002 - F')">Details</button>
+	 </div>  
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('F002 - F')">Add to Cart</button>
       </div>
@@ -217,6 +314,9 @@
       <h3>Honey</h3>
       <p>ID: F003 - Pure Organic</p>
 	  <p id="F003 - F"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('F003 - F')">Details</button>
+	 </div>	  
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('F003 - F')">Add to Cart</button>
       </div>
@@ -232,6 +332,9 @@
       <h3>Honey</h3>
       <p>ID: F004 - Pure Organic</p>
 	  <p id="F004 - F"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('F004 - F')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('F004 - F')">Add to Cart</button>
       </div>
@@ -243,6 +346,9 @@
       <h3>Honey</h3>
       <p>ID: F005 - Pure Organic</p>
 	  <p id="F005 - F"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('F005 - F')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('F005 - F')">Add to Cart</button>
       </div>
@@ -252,14 +358,25 @@
   </div>
 </section>
 
+
+
+
+
+
+
+
+
 <!-- Health Section -->
 <section>
   <h2>Health Products</h2>
   <div class="products">
     <div class="product">
-      <img src="t.jpg" alt="Thermometer">
+      <img src="image/Health/1.jpg" alt="Thermometer">
       <h3>Thermometer</h3>
       <p id="H001 - H"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('H001 - H')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('H001 - H')">Add to Cart</button>
       </div>
@@ -273,6 +390,9 @@
       <h3>Sanitizer</h3>
       <p>ID: H002 - 250ml 70% Alcohol</p> 
 	  <p id="H002 - H"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('H002 - H')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('H002 - H')">Add to Cart</button>
       </div>
@@ -286,6 +406,9 @@
       <h3>Sanitizer</h3>
       <p>ID: H003 - 250ml 70% Alcohol</p>
 	   <p id="H003 - H"></p>
+	   	  <div class="Detailsbutton">
+	<button onclick="showDetails('H003 - H')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('H003 - H')">Add to Cart</button>
       </div>
@@ -300,6 +423,9 @@
       <h3>Sanitizer</h3>
       <p>ID: H004 - 250ml 70% Alcohol</p>
 	   <p id="H004 - H"></p>
+	   	  <div class="Detailsbutton">
+	<button onclick="showDetails('H004 - H')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('H004 - H')">Add to Cart</button>
       </div>
@@ -311,6 +437,9 @@
       <h3>Sanitizer</h3>
       <p>ID: H005 - 250ml 70% Alcohol</p>
 	   <p id="H005 - H"></p>
+	   	  <div class="Detailsbutton">
+	<button onclick="showDetails('H005 - H')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('H005 - H')">Add to Cart</button>
       </div>
@@ -329,9 +458,12 @@
   <h2>Clothing Products</h2>
   <div class="products">
     <div class="product">
-      <img src="k.jpg" alt="T-Shirt">
+      <img src="image/Cloth/1.jpg" alt="T-Shirt">
       <h3>Cotton T-Shirt</h3>
       <p id="C001 - C"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('C001 - C')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('C001 - C')">Add to Cart</button>
       </div>
@@ -356,6 +488,9 @@
       <h3>Running Shoes</h3>
       <p>ID: C002 - Lightweight</p>
 	  <p id="C002 - C"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('C002 - C')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('C002 - C')">Add to Cart</button>
       </div>
@@ -371,6 +506,9 @@
       <h3>Running Shoes</h3>
       <p>ID: C003 - Lightweight</p>
 	  <p id="C003 - C"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('C003 - C')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('C003 - C')">Add to Cart</button>
       </div>
@@ -383,6 +521,9 @@
       <h3>Running Shoes</h3>
       <p>ID: C004 - Lightweight</p>
 	  <p id="C004 - C"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('C004 - C')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('C004 - C')">Add to Cart</button>
       </div>
@@ -395,6 +536,9 @@
       <h3>Running Shoes</h3>
       <p>ID: C005 - Lightweight</p>
 	  <p id="C005 - C"></p>
+	  	  <div class="Detailsbutton">
+	<button onclick="showDetails('C005 - C')">Details</button>
+	 </div>
       <div class="buttons">
         <button class="cart-btn" onclick="addToCart('C005 - C')">Add to Cart</button>
       </div>
@@ -404,9 +548,7 @@
 
 	
 	
-	
-	
-	
+
 	
 	
   </div>
@@ -518,6 +660,73 @@ for (const product in prices) {
       element.innerText = prices[product] + "৳"; // You can add currency symbol
     }
   }
+
+
+
+
+
+
+  
+  
+  //
+      const productDetails = {
+	  
+	  
+	'T001 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
+    'T002 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
+	'T003 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
+	'T004 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
+	'T005 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
+	
+    'F001 - F': 300,
+    'F002 - F': 500,
+	'F003 - F': 300,
+    'F004 - F': 500,
+	'F005 - F': 500,
+	
+	
+	
+    'H001 - H': 700,
+    'H002 - H': 200,
+    'H003 - H': 700,
+    'H004 - H': 200,	
+	'H005 - H': 200,
+	
+	
+	
+    'C001 - C': 400,
+	'C002 - C': 400,
+	'C003 - C': 400,
+	'C004 - C': 400,
+	'C005 - C': 400,
+      //'T001 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.'
+    };
+  
+  
+  
+  
+  
+  
+  
+  
+   function showDetails(productId) {
+      const detail = productDetails[productId] || 'No details available.';
+      document.getElementById('details-content').innerText = detail;
+      document.getElementById('details-popup').style.display = 'block';
+    }
+
+    function closeDetails() {
+      document.getElementById('details-popup').style.display = 'none';
+    }
+  
+  
+  
+
+
+
+
+
+
 
 
 
@@ -689,6 +898,11 @@ function submitForm() {
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('cart-popup').style.display = 'none';
   });
+  
+
+  
+  
+  
 </script>
 
 
