@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="script.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>সদাই-পাতি</title>
@@ -42,25 +43,48 @@
       padding-left: 10px;
       color: #333;
     }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .product {
-      background-color: white;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+	
+	
+	
+	
+	
+	
+	
+.products {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+.products::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for cleaner look */
+}
+.product {
+  flex: 0 0 auto;
+  width: 220px;
+  scroll-snap-align: start;
+}
+
+	
+	
+	
+	
+	
+	
     .product img {
       width: 30%;
       height: 50px;
       object-fit: cover;
       border-radius: 8px;
     }
+	
+	
+	
+	
+	
+	
     .buttons {
       margin-top: 10px;
     }
@@ -151,6 +175,24 @@
       cursor: pointer;
       margin-top: 10px;
     }
+	
+	
+	
+	.test-more-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+	
+	
+	
+	
+	
 	
   </style>
 </head>
@@ -266,6 +308,19 @@
 	
 	
 	
+
+	
+	
+	
+	
+	<div class="buttons">
+    <button class="test-more-btn" onclick="openTestPage1()">More Tech Product</button>
+  </div>
+</div>
+
+	
+	
+	
   </div>
 </section>
 
@@ -353,6 +408,19 @@
         <button class="cart-btn" onclick="addToCart('F005 - F')">Add to Cart</button>
       </div>
     </div>
+	
+	
+	
+	
+	
+	
+	
+	
+		<div class="buttons">
+    <button class="test-more-btn" onclick="openTestPage2()">More Food Product</button>
+  </div>
+</div>
+
 	
 	
   </div>
@@ -447,7 +515,9 @@
 	
 
 	
-	
+			<div class="buttons">
+    <button class="test-more-btn" onclick="openTestPage3()">More Health Product</button>
+  </div>
 	
 	
   </div>
@@ -548,7 +618,9 @@
 
 	
 	
-
+			<div class="buttons">
+    <button class="test-more-btn" onclick="openTestPage4()">More Cloth Product</button>
+  </div>
 	
 	
   </div>
@@ -594,316 +666,6 @@
   <button class="order-btn" onclick="placeOrder()">Place Order</button>
 </div>
 
-<script>
-  const cart = {};
-const cart2 = {};
-  const prices = {
-  
-  
-  
-  
-    'T001 - tech': 700,
-    'T002 - tech': 900,
-	'T003 - tech': 900,
-	'T004 - tech': 900,
-	'T005 - tech': 900,
-	
-	
-	
-    'F001 - F': 300,
-    'F002 - F': 500,
-	'F003 - F': 300,
-    'F004 - F': 500,
-	'F005 - F': 500,
-	
-	
-	
-    'H001 - H': 700,
-    'H002 - H': 200,
-    'H003 - H': 700,
-    'H004 - H': 200,	
-	'H005 - H': 200,
-	
-	
-	
-	
-	
-	
-	
-    'C001 - C': 400,
-	'C002 - C': 400,
-	'C003 - C': 400,
-	'C004 - C': 400,
-	'C005 - C': 400,
-	
-	
-	
-	
-	
-	
-	
-	
-    // Add any additional product IDs and prices here
-  };
-
-
-
-
- // const firstKey = Object.keys(prices)[0];  // 'T001 - Smart Watch'
-  //const firstPrice = prices[firstKey];      // 700
-
-  //document.getElementById("T001 - Smart Watch").innerText = firstPrice;
-
-for (const product in prices) {
-    const element = document.getElementById(product);
-    if (element) {
-      element.innerText = prices[product] + "৳"; // You can add currency symbol
-    }
-  }
-
-
-
-
-
-
-  
-  
-  //
-      const productDetails = {
-	  
-	  
-	'T001 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
-    'T002 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
-	'T003 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
-	'T004 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
-	'T005 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.',
-	
-    'F001 - F': 300,
-    'F002 - F': 500,
-	'F003 - F': 300,
-    'F004 - F': 500,
-	'F005 - F': 500,
-	
-	
-	
-    'H001 - H': 700,
-    'H002 - H': 200,
-    'H003 - H': 700,
-    'H004 - H': 200,	
-	'H005 - H': 200,
-	
-	
-	
-    'C001 - C': 400,
-	'C002 - C': 400,
-	'C003 - C': 400,
-	'C004 - C': 400,
-	'C005 - C': 400,
-      //'T001 - tech': 'This is a smart tech watch with features like heart rate monitoring, GPS, and Bluetooth connectivity.'
-    };
-  
-  
-  
-  
-  
-  
-  
-  
-   function showDetails(productId) {
-      const detail = productDetails[productId] || 'No details available.';
-      document.getElementById('details-content').innerText = detail;
-      document.getElementById('details-popup').style.display = 'block';
-    }
-
-    function closeDetails() {
-      document.getElementById('details-popup').style.display = 'none';
-    }
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-// 
-
-
-
-function submitForm() {
-  const name = document.getElementById('customerName').value;
-  const address = document.getElementById('customerAddress').value;
-  const phone = document.getElementById('customerPhone').value;
-
-  const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeKe-nodiw1qbUoV5SQ76-U16ZwktlGlBC9z1IJ8hobqltM0g/formResponse';
-  const formData = new FormData();
-
-  // 🛒 Cart summary তৈরি করা
-  let cartSummary = '';
-  let subtotal = 0;
-
-  for (const key in cart) {
-    const item = cart[key];
-    const itemTotal = item.qty * item.price;
-    subtotal += itemTotal;
-    cartSummary += `${item.name} - Qty: ${item.qty} × ${item.price} = ${itemTotal} BDT\n`;
-  }
-
-  cartSummary += `\nSubtotal: ${subtotal} BDT`;
-
-  // 📝 Google Form এর Entry ID অনুসারে যুক্ত করো
-  formData.append('entry.114250250', cartSummary); // Cart summary
-  formData.append('entry.516785708', name);        // Name
-  formData.append('entry.1685221504', address);    // Address
-  formData.append('entry.1759499733', phone);      // Phone Number
-
-  fetch(formURL, {
-    method: 'POST',
-    mode: 'no-cors',
-    body: formData
-  })
-  .then(() => {
-    alert('Form submitted successfully!');
-    document.getElementById('customerName').value = '';
-    document.getElementById('customerAddress').value = '';
-    document.getElementById('customerPhone').value = '';
-  })
-  .catch(() => {
-    alert('Error submitting the form.');
-  });
-}
-
-
-
-
-
-//
-
-
-  function addToCart(itemName) {
-  //toggleCart();
- 
-  
- //
-    if (cart[itemName]) {
-      cart[itemName].qty++;
-    } else {
-      cart[itemName] = {
-        name: itemName,
-        qty: 1,
-        price: prices[itemName] || 0
-      };
-    }
-	document.getElementById('cart-count').textContent = Object.keys(cart).length;
-    updateCartDisplay();
-  }
-
-
-
-
-
-
-
-  function removeFromCart(itemName) {
-    if (cart[itemName]) {
-      cart[itemName].qty--;
-      if (cart[itemName].qty <= 0) {
-        delete cart[itemName];
-      }
-    }
-	
-	document.getElementById('cart-count').textContent = Object.keys(cart).length;
-	
-	
-	
-	
-	//
-	
-    updateCartDisplay();
-  }
-
-  function deleteItem(itemName) {
-    delete cart[itemName];
-	
-	
-			if (cart[itemName]) {
-    cart[itemName].qty--;
-    if (cart[itemName].qty <= 0) {
-      delete cart2[itemName];
-    }
-  }
-	
-	document.getElementById('cart-count').textContent = Object.keys(cart).length;
-	
-	
-	
-	
-	
-    updateCartDisplay();
-  }
-
-  function toggleCart() {
-    const popup = document.getElementById('cart-popup');
-    popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
-  }
-
-  function updateCartDisplay() {
-    const cartItemsDiv = document.getElementById('cart-items');
-    const subtotalSpan = document.getElementById('subtotal');
-    const totalSpan = document.getElementById('total');
-    
-    cartItemsDiv.innerHTML = '';
-    let subtotal = 0;
-    
-    for (const key in cart) {
-      const item = cart[key];
-      const itemTotal = item.qty * item.price;
-      subtotal += itemTotal;
-
-      const div = document.createElement('div');
-      div.innerHTML = `
-        ${item.name} - Qty: ${item.qty} 
-        <button onclick="addToCart('${item.name}')">+</button>
-        <button onclick="removeFromCart('${item.name}')">-</button>
-        <button onclick="deleteItem('${item.name}')">🗑️</button>
-        <br><small>${item.qty} × ${item.price} BDT = ${itemTotal} BDT</small>
-        <hr>
-      `;
-      cartItemsDiv.appendChild(div);
-    }
-
-    subtotalSpan.innerText = `${subtotal} BDT`;
-    totalSpan.innerText = `${subtotal} BDT`; // Modify here if tax/shipping is added
-  }
-
-  function placeOrder() {
-    if (Object.keys(cart).length === 0) {
-      alert('Your cart is empty!');
-      return;
-    }
-	
-	submitForm();
-    alert('Order placed successfully!');
-    for (let key in cart) delete cart[key]; // Clear cart
-    updateCartDisplay();
-  }
-
-  // Initialize cart popup hidden
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('cart-popup').style.display = 'none';
-  });
-  
-
-  
-  
-  
-</script>
 
 
 </body>
