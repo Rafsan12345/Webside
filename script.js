@@ -155,19 +155,19 @@ function submitForm() {
 }
 
 function openTestPage1() {
-  window.location.href = 'tech.html';
+  window.location.href = 'tech/index.html';
 }
 
 
 function openTestPage2() {
-  window.location.href = 'food.html';
+  window.location.href = 'food/index.html';
 }
 
 
 function openTestPage3() {
-  window.location.href = 'health.html';
+  window.location.href = 'health/index.html';
 }
 
 function openTestPage4() {
-  window.location.href = 'cloth.html';
+  window.location.href = 'cloth/index.html';
 }
